@@ -62,16 +62,3 @@ pivot_offset = Vector2(20, 20)
 [node name="Crosshair" type="Sprite2D" parent="Control/Control"]
 position = Vector2(20, 20)
 texture = ExtResource("2_00gm8")
-
-[node name="GroundedLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Grounded: "
-
-[node name="MaxSlopeLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_top = 19.0
-offset_right = 87.0
-offset_bottom = 45.0
-text = "Grounded: "

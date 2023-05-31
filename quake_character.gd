@@ -2,8 +2,6 @@ extends CharacterBody3D
 
 @onready var camera: Camera3D = $FPCamera
 @onready var speed_label: Label = $Control/Speed
-@onready var grounded_label: Label = $Control/GroundedLabel
-@onready var max_slope_label: Label = $Control/MaxSlopeLabel
 
 var mouse_sens: float = 0.001
 var friction: float = 4
