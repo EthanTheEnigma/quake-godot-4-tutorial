@@ -1,0 +1,556 @@
+[gd_scene load_steps=11 format=3 uid="uid://tc88ne1wwnds"]
+
+[ext_resource type="PackedScene" uid="uid://csv4fcxceavtq" path="res://floor.tscn" id="1_iqwv3"]
+[ext_resource type="PackedScene" uid="uid://bjwegeugppebh" path="res://ramp.tscn" id="2_rb28w"]
+[ext_resource type="PackedScene" uid="uid://cwatdlwvxubxv" path="res://wall.tscn" id="3_8jjm7"]
+[ext_resource type="PackedScene" uid="uid://cnftbq1lfurh2" path="res://quake_character.tscn" id="4_4o17q"]
+[ext_resource type="Texture2D" uid="uid://b6mrhbinlt1se" path="res://dbg-tex/Dark/texture_01.png" id="4_86d0w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wid1h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7qqhv"]
+sky_material = SubResource("ProceduralSkyMaterial_wid1h")
+
+[sub_resource type="Environment" id="Environment_mql3b"]
+background_mode = 2
+sky = SubResource("Sky_7qqhv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evoa4"]
+albedo_texture = ExtResource("4_86d0w")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv2_scale = Vector3(0.25, 0.25, 0.25)
+uv2_triplanar = true
+
+[sub_resource type="Curve3D" id="Curve3D_6wrmy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 7.40253, -7.69939, 0, 9.53539, -18.1359, 0, -9.53539, 18.1359, 0, -49.7686, 51.3584, 0, -0.186966, -20.9405, 0, 0.186966, 20.9405, 0, -62.4825, 119.602, 0, 0, 0, 0, 0, 0, 0, -49.5817, 172.327),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mql3b")
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="floors" type="Node3D" parent="Geometry"]
+
+[node name="wall2" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 32.1203, 0, -0.0705955)
+
+[node name="wall6" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 0, 0, 8.18545e-12)
+
+[node name="wall7" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 64, 0, -1.67852e-05)
+
+[node name="wall10" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 32.1203, 0, -32.0706)
+
+[node name="wall11" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 2.09815e-06, 0, -32)
+
+[node name="wall12" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 64, 0, -32)
+
+[node name="wall8" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 64, 0, 64)
+
+[node name="wall9" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 1.52588e-05, 0, 64)
+
+[node name="wall13" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, 64)
+
+[node name="wall14" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, 32)
+
+[node name="wall15" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, 0)
+
+[node name="wall16" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, -32)
+
+[node name="wall33" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, -96)
+
+[node name="wall34" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 1.52588e-05, 0, -96)
+
+[node name="wall35" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, 1.52588e-05, 0, -128)
+
+[node name="wall36" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-1, 0, -2.62269e-07, 0, 1, 0, 2.62269e-07, 0, -1, -32, 0, -128)
+
+[node name="wall3" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 0)
+
+[node name="wall17" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16, 8.27701, 13.9318)
+
+[node name="wall18" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 47, 8.27701, 13.9318)
+
+[node name="wall37" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 37, 6.27701, 13.9318)
+
+[node name="wall19" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 47, 31.1922, 68.6268)
+
+[node name="wall20" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 47, 31.1922, 68.6268)
+
+[node name="wall21" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 15, 31.1922, 68.6268)
+
+[node name="wall22" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -17, 31.1922, 68.6268)
+
+[node name="wall23" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -49, 31.1922, 68.6268)
+
+[node name="wall24" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -81, 31.1922, 68.6268)
+
+[node name="wall27" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, 68.6268)
+
+[node name="wall38" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, 100.627)
+
+[node name="wall28" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, 36.6268)
+
+[node name="wall29" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, 4.62682)
+
+[node name="wall30" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, -27.3732)
+
+[node name="wall31" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, -59.3732)
+
+[node name="wall32" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -71.6505, 53.8631, -91.3732)
+
+[node name="wall25" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -113, 31.1922, 68.6268)
+
+[node name="wall26" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -145, 31.1922, 68.6268)
+
+[node name="wall4" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 32, 0, 32)
+
+[node name="wall5" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2.79753e-06, 0, 32)
+
+[node name="wall" parent="Geometry/floors" instance=ExtResource("1_iqwv3")]
+
+[node name="BeegFloor" type="CSGBox3D" parent="Geometry/floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
+use_collision = true
+size = Vector3(5000, 6, 5000)
+material = SubResource("StandardMaterial3D_evoa4")
+
+[node name="ramps" type="Node3D" parent="Geometry"]
+
+[node name="ramp" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -48, 0, -17)
+
+[node name="ramp2" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -32, 0, -17)
+
+[node name="ramp18" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -32, -35, -210)
+
+[node name="ramp19" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -32, -12, -187)
+
+[node name="MeshInstance3D" parent="Geometry/ramps/ramp19/StaticBody3D" index="1"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 32, 8, -0.500015, 16)
+
+[node name="ramp20" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -32, -35, -99)
+
+[node name="ramp21" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -32, -12, -76)
+
+[node name="MeshInstance3D" parent="Geometry/ramps/ramp21/StaticBody3D" index="1"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 32, 8, -0.500015, 16)
+
+[node name="ramp3" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 15, 0, -17)
+
+[node name="ramp17" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 31, 0, -17)
+
+[node name="ramp4" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 31, 8.5666, 46)
+
+[node name="ramp5" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 15, 8.5666, 46)
+
+[node name="ramp6" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, -49, 31.2325, 68.63)
+
+[node name="ramp7" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, 52.63)
+
+[node name="ramp8" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, 36.63)
+
+[node name="ramp9" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, 20.63)
+
+[node name="ramp10" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, 4.62997)
+
+[node name="ramp11" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -11.37)
+
+[node name="ramp12" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -27.37)
+
+[node name="ramp13" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -43.37)
+
+[node name="ramp14" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -59.37)
+
+[node name="ramp15" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -75.37)
+
+[node name="ramp16" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.2222e-08, 0.866025, -0.5, 1.13133e-08, 0.5, 0.866025, 1, 3.09086e-08, -3.09086e-08, -55.6524, 26.1433, -91.37)
+
+[node name="ramp22" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -75.37)
+
+[node name="ramp49" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -91.37)
+
+[node name="ramp50" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -107.37)
+
+[node name="ramp51" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -123.37)
+
+[node name="ramp52" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -139.37)
+
+[node name="ramp53" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -155.37)
+
+[node name="ramp54" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -171.37)
+
+[node name="ramp55" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -187.37)
+
+[node name="ramp23" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -59.37)
+
+[node name="ramp24" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -43.37)
+
+[node name="ramp25" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -27.37)
+
+[node name="ramp26" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, -11.37)
+
+[node name="ramp27" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, 4.63)
+
+[node name="ramp28" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, 20.63)
+
+[node name="ramp29" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, 36.63)
+
+[node name="ramp30" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, 52.63)
+
+[node name="ramp32" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, 68.63)
+
+[node name="ramp33" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, 52.63)
+
+[node name="ramp34" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, 36.63)
+
+[node name="ramp35" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, 20.63)
+
+[node name="ramp36" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, 4.63)
+
+[node name="ramp37" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -11.37)
+
+[node name="ramp38" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -27.37)
+
+[node name="ramp39" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -43.37)
+
+[node name="ramp40" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -59.37)
+
+[node name="ramp41" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -75.37)
+
+[node name="ramp42" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -91.37)
+
+[node name="ramp43" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -107.37)
+
+[node name="ramp44" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -123.544)
+
+[node name="ramp45" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -139.544)
+
+[node name="ramp46" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -155.544)
+
+[node name="ramp47" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -171.544)
+
+[node name="ramp56" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -187.544)
+
+[node name="ramp57" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -171.544)
+
+[node name="ramp58" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -155.544)
+
+[node name="ramp59" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -139.544)
+
+[node name="ramp60" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -123.544)
+
+[node name="ramp61" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -107.544)
+
+[node name="ramp62" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -91.5435)
+
+[node name="ramp63" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -75.5435)
+
+[node name="ramp64" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -59.5435)
+
+[node name="ramp65" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -43.5435)
+
+[node name="ramp66" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -27.5435)
+
+[node name="ramp67" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, -11.5435)
+
+[node name="ramp68" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, 4.45645)
+
+[node name="ramp69" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, 20.4565)
+
+[node name="ramp70" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, 36.4565)
+
+[node name="ramp71" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, 52.4565)
+
+[node name="ramp72" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -151.652, -29.2823, 68.4565)
+
+[node name="ramp48" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -135.652, -1.5695, -187.544)
+
+[node name="ramp31" parent="Geometry/ramps" instance=ExtResource("2_rb28w")]
+transform = Transform3D(-4.52008e-08, -0.866025, 0.5, 1.13133e-08, 0.5, 0.866025, -1, 4.48017e-08, -1.28028e-08, -119.652, 26.1433, 68.63)
+
+[node name="walls" type="Node3D" parent="Geometry"]
+
+[node name="wall" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0198, 0, 13.838)
+
+[node name="wall3" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.9581, 0, 13.838)
+
+[node name="wall4" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.9581, 0, 44.838)
+
+[node name="wall2" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9981, 0, 13.8754)
+
+[node name="wall5" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9802, 0, 13.838)
+
+[node name="wall6" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.0419, 0, 13.838)
+
+[node name="wall7" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.0419, 0, 44.838)
+
+[node name="wall8" parent="Geometry/walls" instance=ExtResource("3_8jjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0019, 0, 13.8754)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Geometry"]
+use_collision = true
+polygon = PackedVector2Array(-7.98955, -0.231367, -0.193595, 14.8993, 0.219809, 14.8602, 7.99409, -0.202222)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112, 48, 99)
+curve = SubResource("Curve3D_6wrmy")
+
+[node name="quake-character" parent="." instance=ExtResource("4_4o17q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.2059, 58.872, 2.97767)
+
+[editable path="Geometry/floors/wall2"]
+[editable path="Geometry/floors/wall6"]
+[editable path="Geometry/floors/wall7"]
+[editable path="Geometry/floors/wall10"]
+[editable path="Geometry/floors/wall11"]
+[editable path="Geometry/floors/wall12"]
+[editable path="Geometry/floors/wall8"]
+[editable path="Geometry/floors/wall9"]
+[editable path="Geometry/floors/wall13"]
+[editable path="Geometry/floors/wall14"]
+[editable path="Geometry/floors/wall15"]
+[editable path="Geometry/floors/wall16"]
+[editable path="Geometry/floors/wall33"]
+[editable path="Geometry/floors/wall34"]
+[editable path="Geometry/floors/wall35"]
+[editable path="Geometry/floors/wall36"]
+[editable path="Geometry/floors/wall3"]
+[editable path="Geometry/floors/wall17"]
+[editable path="Geometry/floors/wall18"]
+[editable path="Geometry/floors/wall37"]
+[editable path="Geometry/floors/wall19"]
+[editable path="Geometry/floors/wall20"]
+[editable path="Geometry/floors/wall21"]
+[editable path="Geometry/floors/wall22"]
+[editable path="Geometry/floors/wall23"]
+[editable path="Geometry/floors/wall24"]
+[editable path="Geometry/floors/wall27"]
+[editable path="Geometry/floors/wall38"]
+[editable path="Geometry/floors/wall28"]
+[editable path="Geometry/floors/wall29"]
+[editable path="Geometry/floors/wall30"]
+[editable path="Geometry/floors/wall31"]
+[editable path="Geometry/floors/wall32"]
+[editable path="Geometry/floors/wall25"]
+[editable path="Geometry/floors/wall26"]
+[editable path="Geometry/floors/wall4"]
+[editable path="Geometry/floors/wall5"]
+[editable path="Geometry/floors/wall"]
+[editable path="Geometry/ramps/ramp"]
+[editable path="Geometry/ramps/ramp2"]
+[editable path="Geometry/ramps/ramp18"]
+[editable path="Geometry/ramps/ramp19"]
+[editable path="Geometry/ramps/ramp20"]
+[editable path="Geometry/ramps/ramp21"]
+[editable path="Geometry/ramps/ramp3"]
+[editable path="Geometry/ramps/ramp17"]
+[editable path="Geometry/ramps/ramp4"]
+[editable path="Geometry/ramps/ramp5"]
+[editable path="Geometry/ramps/ramp6"]
+[editable path="Geometry/ramps/ramp7"]
+[editable path="Geometry/ramps/ramp8"]
+[editable path="Geometry/ramps/ramp9"]
+[editable path="Geometry/ramps/ramp10"]
+[editable path="Geometry/ramps/ramp11"]
+[editable path="Geometry/ramps/ramp12"]
+[editable path="Geometry/ramps/ramp13"]
+[editable path="Geometry/ramps/ramp14"]
+[editable path="Geometry/ramps/ramp15"]
+[editable path="Geometry/ramps/ramp16"]
+[editable path="Geometry/ramps/ramp22"]
+[editable path="Geometry/ramps/ramp49"]
+[editable path="Geometry/ramps/ramp50"]
+[editable path="Geometry/ramps/ramp51"]
+[editable path="Geometry/ramps/ramp52"]
+[editable path="Geometry/ramps/ramp53"]
+[editable path="Geometry/ramps/ramp54"]
+[editable path="Geometry/ramps/ramp55"]
+[editable path="Geometry/ramps/ramp23"]
+[editable path="Geometry/ramps/ramp24"]
+[editable path="Geometry/ramps/ramp25"]
+[editable path="Geometry/ramps/ramp26"]
+[editable path="Geometry/ramps/ramp27"]
+[editable path="Geometry/ramps/ramp28"]
+[editable path="Geometry/ramps/ramp29"]
+[editable path="Geometry/ramps/ramp30"]
+[editable path="Geometry/ramps/ramp32"]
+[editable path="Geometry/ramps/ramp33"]
+[editable path="Geometry/ramps/ramp34"]
+[editable path="Geometry/ramps/ramp35"]
+[editable path="Geometry/ramps/ramp36"]
+[editable path="Geometry/ramps/ramp37"]
+[editable path="Geometry/ramps/ramp38"]
+[editable path="Geometry/ramps/ramp39"]
+[editable path="Geometry/ramps/ramp40"]
+[editable path="Geometry/ramps/ramp41"]
+[editable path="Geometry/ramps/ramp42"]
+[editable path="Geometry/ramps/ramp43"]
+[editable path="Geometry/ramps/ramp44"]
+[editable path="Geometry/ramps/ramp45"]
+[editable path="Geometry/ramps/ramp46"]
+[editable path="Geometry/ramps/ramp47"]
+[editable path="Geometry/ramps/ramp56"]
+[editable path="Geometry/ramps/ramp57"]
+[editable path="Geometry/ramps/ramp58"]
+[editable path="Geometry/ramps/ramp59"]
+[editable path="Geometry/ramps/ramp60"]
+[editable path="Geometry/ramps/ramp61"]
+[editable path="Geometry/ramps/ramp62"]
+[editable path="Geometry/ramps/ramp63"]
+[editable path="Geometry/ramps/ramp64"]
+[editable path="Geometry/ramps/ramp65"]
+[editable path="Geometry/ramps/ramp66"]
+[editable path="Geometry/ramps/ramp67"]
+[editable path="Geometry/ramps/ramp68"]
+[editable path="Geometry/ramps/ramp69"]
+[editable path="Geometry/ramps/ramp70"]
+[editable path="Geometry/ramps/ramp71"]
+[editable path="Geometry/ramps/ramp72"]
+[editable path="Geometry/ramps/ramp48"]
+[editable path="Geometry/ramps/ramp31"]
+[editable path="Geometry/walls/wall"]
+[editable path="Geometry/walls/wall3"]
+[editable path="Geometry/walls/wall4"]
+[editable path="Geometry/walls/wall2"]
+[editable path="Geometry/walls/wall5"]
+[editable path="Geometry/walls/wall6"]
+[editable path="Geometry/walls/wall7"]
+[editable path="Geometry/walls/wall8"]

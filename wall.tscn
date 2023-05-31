@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwatdlwvxubxv"]
+
+[ext_resource type="Script" path="res://CSG-Block.gd" id="1_w0uw7"]
+[ext_resource type="Texture2D" uid="uid://o5j4ebpobjqk" path="res://dbg-tex/Light/texture_07.png" id="2_216mb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qcini"]
+size = Vector3(1, 8, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc1p7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwalx"]
+albedo_texture = ExtResource("2_216mb")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_scale = Vector3(4, 4, 4)
+uv2_triplanar = true
+uv2_world_triplanar = true
+
+[node name="wall" type="Node3D"]
+script = ExtResource("1_w0uw7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, 16)
+shape = SubResource("BoxShape3D_qcini")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 32, 0.5, 4, 16)
+mesh = SubResource("BoxMesh_qc1p7")
+surface_material_override/0 = SubResource("StandardMaterial3D_iwalx")
+
+[node name="attach-point-back" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="attach-point-forward" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2.79753e-06, 0, 32)
+
+[node name="attach-point-top" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2.79753e-06, 8, 0)

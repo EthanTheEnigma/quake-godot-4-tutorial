@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjwegeugppebh"]
+
+[ext_resource type="Script" path="res://CSG-Block.gd" id="1_th4d2"]
+[ext_resource type="Texture2D" uid="uid://dhinguqll26v0" path="res://dbg-tex/Red/texture_04.png" id="2_6dguf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qcini"]
+size = Vector3(16, 1, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc1p7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5yy8"]
+albedo_texture = ExtResource("2_6dguf")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="ramp" type="Node3D"]
+script = ExtResource("1_th4d2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.5, 16)
+shape = SubResource("BoxShape3D_qcini")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 32, 8, -0.5, 16)
+mesh = SubResource("BoxMesh_qc1p7")
+surface_material_override/0 = SubResource("StandardMaterial3D_o5yy8")
+
+[node name="attach-point-back" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="attach-point-forward" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2.79753e-06, 0, 32)

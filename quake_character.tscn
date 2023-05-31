@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnftbq1lfurh2"]
+
+[ext_resource type="Script" path="res://quake_character.gd" id="1_m7sum"]
+[ext_resource type="Texture2D" uid="uid://creg6n3xdh04a" path="res://crosshair.png" id="2_00gm8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ehy6l"]
+
+[node name="quake-character" type="CharacterBody3D"]
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_snap_length = 0.4
+script = ExtResource("1_m7sum")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ehy6l")
+
+[node name="FPCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+fov = 110.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Speed" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SPeed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+
+[node name="Crosshair" type="Sprite2D" parent="Control/Control"]
+position = Vector2(20, 20)
+texture = ExtResource("2_00gm8")
+
+[node name="GroundedLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Grounded: "
+
+[node name="MaxSlopeLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 87.0
+offset_bottom = 45.0
+text = "Grounded: "
